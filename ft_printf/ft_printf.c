@@ -12,18 +12,56 @@
 
 #include "ft_printf.h"
 
+void	ft_conversions(va_list ap, char c, t_flags *flags)
+{
+	if (c == 'c')
+		ft_chr(ap, flags);
+	else if (c == 's')
+		ft_string(ap, flags);
+	else if (c == 'd' || c == 'i')
+		ft_int(ap, flags);
+	else if (c == 'u')
+		ft_unsigned_int(ap, flags);
+	else if (c == '%')
+		ft_percent(flags);
+	else if (c == 'x')
+		ft_hex(ap, flags, 0);
+	else if (c == 'X')
+		ft_hex(ap, flags, 1);
+	else if(c == 'p')
+		ft_pointer(ap, flags);
+}
+
+void		ft_modifiers(const char *s, int *i, t_flags *flags, va_list ap)
+{
+	char	c;
+
+	c = s[*i];
+	if (c == '-' && flags->width == 0)
+		flags->minus = 1;
+	else if (ft_strchr("123456789*", c))
+		ft_get_width(s, i, flags, ap);
+	else if (c == '0')
+		flags->zero = ft_control_star(s, i, ap, flags);
+	else if (c == '.')
+	{
+		flags->precision = 1;
+		flags->precision_l = ft_control_star(s, i, ap, flags);
+	}
+}
+
 void 	ft_parse_str(t_flags *flags, const char *format, va_list ap, int *i)
 {
 	if (ft_strchr(CONVERSIONS, format[*i]))
 	{
-		//ft_conversions(ap, format[*i], flags);
+		ft_conversions(ap, format[*i], flags);
 		ft_reset_flags(flags);
 	}
-	//else
-	//ft_modifiers(format, i, data, ap);
+	else
+		ft_modifiers(format, i, data, ap);
 }
 
-int		ft_manage_format(t_flags *flags, const char *format, va_list ap)
+int		ft_manage_format(t_flags *flags, const char *format)
 {
 	int		i;
 
@@ -61,7 +99,7 @@ int		ft_printf(const char *format, ...)
 	flags = malloc(sizeof(t_flags));
 	flags->printed = 0;
 	ft_reset_flags(flags);
-	ft_manage_format(flags, format, ap);
+	ft_manage_format(flags, format);
 	printed = flags->printed;
 	free(flags);
 	return (printed);

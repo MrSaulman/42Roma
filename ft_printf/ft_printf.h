@@ -1,7 +1,7 @@
 #ifndef FT_PRINTF_H
 #define FT_PRINTF_H
 #define ALLSIMBOLS "cspdiuxX%-.*0123456789"
-# define CONVERSIONS "cspdiuxX%"
+#define CONVERSIONS "cspdiuxX%"
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>

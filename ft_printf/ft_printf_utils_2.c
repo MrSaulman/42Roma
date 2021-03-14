@@ -1,3 +1,4 @@
+#include "ft_printf.h"
 
 int     ft_check_segfault(const char *s)
 {
