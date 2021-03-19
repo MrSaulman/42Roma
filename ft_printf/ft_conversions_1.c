@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_conversions_1.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/15 17:12:53 by asalvemi          #+#    #+#             */
+/*   Updated: 2021/03/15 19:04:59 by asalvemi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 void	ft_chr(va_list ap, t_flags *flags)
@@ -32,7 +44,7 @@ void	ft_percent(t_flags *flags)
 	if (flags->zero > 0 && flags->minus != 1)
 		flags->printed += ft_zero(1, flags->zero);
 	flags->printed += write(1, "%", 1);
-	if (flags-±width > 0 && flags->minus == 1)
+	if (flags->width > 0 && flags->minus == 1)
 		ft_width(flags->width, 1, flags);
 	if (flags->zero > 0 && flags->minus == 1)
 		ft_width(flags->zero, 1, flags);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asalvemi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 19:54:43 by asalvemi          #+#    #+#             */
-/*   Updated: 2021/02/26 19:55:20 by asalvemi         ###   ########.fr       */
+/*   Updated: 2021/03/17 17:30:37 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_conversions(va_list ap, char c, t_flags *flags)
 		ft_pointer(ap, flags);
 }
 
-void		ft_modifiers(const char *s, int *i, t_flags *flags, va_list ap)
+void	ft_modifiers(const char *s, int *i, t_flags *flags, va_list ap)
 {
 	char	c;
 
@@ -58,10 +58,10 @@ void 	ft_parse_str(t_flags *flags, const char *format, va_list ap, int *i)
 		ft_reset_flags(flags);
 	}
 	else
-		ft_modifiers(format, i, data, ap);
+		ft_modifiers(format, i, flags, ap);
 }
 
-int		ft_manage_format(t_flags *flags, const char *format)
+int		ft_manage_format(t_flags *flags, const char *format, va_list ap)
 {
 	int		i;
 
@@ -99,7 +99,7 @@ int		ft_printf(const char *format, ...)
 	flags = malloc(sizeof(t_flags));
 	flags->printed = 0;
 	ft_reset_flags(flags);
-	ft_manage_format(flags, format);
+	ft_manage_format(flags, format, ap);
 	printed = flags->printed;
 	free(flags);
 	return (printed);
