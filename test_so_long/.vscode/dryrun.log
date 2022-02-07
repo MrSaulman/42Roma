@@ -1,0 +1,21 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/asalvemi/Desktop/42Roma/test_so_long'
+make: Leaving directory `/Users/asalvemi/Desktop/42Roma/test_so_long'
+ 
+make: *** No rule to make target `errors.c', needed by `*.o'.
+make: *** No rule to make target `map/map_checker_utils.c', needed by `*.o'.
+make: *** No rule to make target `map/tilemap_generator.c', needed by `*.o'.
+make: *** No rule to make target `map/enemy_generator.c', needed by `*.o'.
+make: *** No rule to make target `game/open_wall_images.c', needed by `*.o'.
+make: *** No rule to make target `game/open_panel.c', needed by `*.o'.
+make: *** No rule to make target `game/input.c', needed by `*.o'.
+make: *** No rule to make target `game/player_movement.c', needed by `*.o'.
+make: *** No rule to make target `game/player_end.c', needed by `*.o'.
+make: *** No rule to make target `game/update.c', needed by `*.o'.
+make: *** No rule to make target `game/enemy_behaviour.c', needed by `*.o'.
+make: *** No rule to make target `game/follower_behaviour.c', needed by `*.o'.
+make: *** No rule to make target `game/render.c', needed by `*.o'.
+make: *** No rule to make target `game/draw_wall.c', needed by `*.o'.
+make: *** No rule to make target `game/reset.c', needed by `*.o'.
+make: *** No rule to make target `game/end_program.c', needed by `*.o'.
+ 
