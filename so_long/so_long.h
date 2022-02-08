@@ -6,15 +6,28 @@
 /*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 19:10:26 by asalvemi          #+#    #+#             */
-/*   Updated: 2022/02/08 19:10:27 by asalvemi         ###   ########.fr       */
+/*   Updated: 2022/02/08 20:17:27 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "basics.h"
+# include <stdio.h>
 # include <mlx.h>
+# include "libft/libft.h"
+
+typedef enum e_bool
+{
+	TRUE = 1,
+	FALSE = 0
+}	t_bool;
+
+typedef struct s_vector
+{
+	int	x;
+	int	y;
+}	t_vector;
 
 /* Size of every sprite */
 # define IMG_SIZE 64
@@ -198,5 +211,9 @@ void	remove_player(t_game *game);
 void	kill_player(t_game *game, t_vector pos);
 int		reset(t_game *game);
 int		end_program(t_game *game);
+
+int		error(char *message);
+void	*null_error(char *message);
+void	print_warning(char *message);
 
 #endif

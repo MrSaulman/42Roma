@@ -6,14 +6,13 @@
 /*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 19:09:34 by asalvemi          #+#    #+#             */
-/*   Updated: 2022/02/08 19:09:35 by asalvemi         ###   ########.fr       */
+/*   Updated: 2022/02/08 20:07:01 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MAP_H
 # define MAP_H
 
-# include "../basics.h"
 # include "../so_long.h"
 
 int		valid_file(int argc, char *file);

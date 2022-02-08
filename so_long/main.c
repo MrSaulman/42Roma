@@ -6,11 +6,10 @@
 /*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 19:10:21 by asalvemi          #+#    #+#             */
-/*   Updated: 2022/02/08 19:10:22 by asalvemi         ###   ########.fr       */
+/*   Updated: 2022/02/08 20:05:37 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "basics.h"
 #include "map/map.h"
 #include "so_long.h"
 
