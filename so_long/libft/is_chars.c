@@ -6,7 +6,7 @@
 /*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 19:06:58 by asalvemi          #+#    #+#             */
-/*   Updated: 2022/02/08 19:06:58 by asalvemi         ###   ########.fr       */
+/*   Updated: 2022/02/10 17:23:34 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,14 @@ int	ft_isprint(int c)
 /* Returns 1 if <c> is consider a space char. 0 if not. */
 int	ft_isspace(int c)
 {
-	if (c == ' ' || c == '\n' || c == '\t' || c == '\v' || c == '\f' || c == '\r')
+	if (
+		c == ' '
+		|| c == '\n'
+		|| c == '\t'
+		|| c == '\v'
+		|| c == '\f'
+		|| c == '\r'
+	)
 		return (1);
 	return (0);
 }

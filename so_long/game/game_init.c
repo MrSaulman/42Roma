@@ -6,7 +6,7 @@
 /*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 19:05:29 by asalvemi          #+#    #+#             */
-/*   Updated: 2022/02/08 19:05:30 by asalvemi         ###   ########.fr       */
+/*   Updated: 2022/02/10 19:13:46 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,10 @@ void	game_init(t_game *game)
 /* Sets the frames of all animatios */
 static void	anim_setup(t_game *game)
 {
-	game->player.idle_frames = 17;
+	game->player.idle_frames = 4;
 	game->player.action_frames = 10;
 	game->collects_imgs.anim_frames = 25;
-	game->effect.frames = 7;
+	game->effect.frames = 10;
 	game->enemy_imgs.basic_anim = 16;
 	game->enemy_imgs.follow_anim = 6;
 }

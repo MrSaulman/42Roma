@@ -6,11 +6,9 @@
 /*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 19:56:30 by asalvemi          #+#    #+#             */
-/*   Updated: 2022/02/08 19:56:31 by asalvemi         ###   ########.fr       */
+/*   Updated: 2022/02/10 17:25:12 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #ifndef LIBFT_H
 # define LIBFT_H
@@ -25,13 +23,13 @@ int		ft_isalnum(int c);
 
 int		ft_isalpha(int c);
 int		ft_isupperalpha(int c);
-int		ft_toupper (int c);
-int		ft_tolower (int c);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
 
 size_t	ft_strlen(const char *str);
 int		ft_wordcount(const char *str, char c);
-size_t	ft_strlcpy (char *dst, const char *src, size_t dstsize);
-size_t	ft_strlcat (char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_strncmp(const char *str1, const char *str2, size_t n);
@@ -61,7 +59,7 @@ int		ft_digitcount(long n);
 int		ft_hexlen(unsigned int n);
 int		ft_hexlen_long(unsigned long num);
 
-void	*ft_memset (void *str, int c, size_t n);
+void	*ft_memset(void *str, int c, size_t n);
 void	ft_bzero(void *str, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, void *src, size_t len);

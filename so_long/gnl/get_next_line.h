@@ -6,7 +6,7 @@
 /*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 19:56:05 by asalvemi          #+#    #+#             */
-/*   Updated: 2022/02/08 19:56:11 by asalvemi         ###   ########.fr       */
+/*   Updated: 2022/02/10 17:18:58 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		get_next_line(int fd, char **line);
 #  define BUFFER_SIZE 42
 # endif
 
-int		ft_linelen (char *line);
+int		ft_linelen(char *line);
 int		ft_newread(int fd, char **oldread);
 char	*ft_getline(int len, char *read);
 char	*ft_clearline(int len, char *read);

@@ -6,7 +6,7 @@
 /*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 19:55:29 by asalvemi          #+#    #+#             */
-/*   Updated: 2022/02/08 19:55:42 by asalvemi         ###   ########.fr       */
+/*   Updated: 2022/02/10 17:19:20 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 /* Returns the index of the \n in <line>
 if there is one. -1 if not founded. */
-int	ft_linelen (char *line)
+int	ft_linelen(char *line)
 {
 	int	i;
 

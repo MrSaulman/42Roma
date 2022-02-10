@@ -6,7 +6,7 @@
 /*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 19:06:36 by asalvemi          #+#    #+#             */
-/*   Updated: 2022/02/08 19:06:37 by asalvemi         ###   ########.fr       */
+/*   Updated: 2022/02/10 17:19:46 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_isupperalpha(int c)
 
 /* Returns the UPPERCASE of a letter.
 And the same char if it isn't a lower case letter */
-int	ft_toupper (int c)
+int	ft_toupper(int c)
 {
 	if (ft_isalpha(c) && c >= 'a')
 		return (c - 32);
@@ -43,7 +43,7 @@ int	ft_toupper (int c)
 
 /* Returns the LOWERCASE of a letter.
 And the same char if it isn't an upper case letter */
-int	ft_tolower (int c)
+int	ft_tolower(int c)
 {
 	if (ft_isalpha(c) && c <= 'Z')
 		return (c + 32);

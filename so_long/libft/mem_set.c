@@ -6,7 +6,7 @@
 /*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 19:07:43 by asalvemi          #+#    #+#             */
-/*   Updated: 2022/02/08 19:07:44 by asalvemi         ###   ########.fr       */
+/*   Updated: 2022/02/10 17:20:37 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "libft.h"
 
 /* Turns <n> bytes if <str> into <c> */
-void	*ft_memset (void *str, int c, size_t n)
+void	*ft_memset(void *str, int c, size_t n)
 {
 	unsigned char	*auxstr;
 	int				i;
@@ -30,12 +30,12 @@ void	*ft_memset (void *str, int c, size_t n)
 }
 
 /* Turns <n> bytes of <target> into '\0' */
-void	ft_bzero (void *target, size_t n)
+void	ft_bzero(void *target, size_t n)
 {
 	ft_memset(target, '\0', n);
 }
 
-void	*ft_memcpy (void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	char	*auxdest;
 	char	*auxsrc;
@@ -78,7 +78,7 @@ If the char <c> occurs in <src>, the copy stops
 and a pointer to the byte after the copy of <c>
 in <dst> is returned.  Otherwise, <n> bytes are
 copied, and a NULL pointer is returned. */
-void	*ft_memccpy (void *dst, const void *src, int c, size_t n)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	unsigned char	*auxdst;
 	unsigned char	*auxsrc;
