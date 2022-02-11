@@ -6,7 +6,7 @@
 /*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 19:05:35 by asalvemi          #+#    #+#             */
-/*   Updated: 2022/02/08 19:05:36 by asalvemi         ###   ########.fr       */
+/*   Updated: 2022/02/11 13:09:10 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ static void	open_player_imgs(t_game *game)
 static void	open_collect_imgs(t_game *game)
 {
 	game->collects_imgs.img_0 = mlx_xpm_file_to_image(game->mlx,
-			"sprites/plant_03.xpm",
+			"sprites/shit_01.xpm",
 			&game->img_size.x, &game->img_size.y);
 	game->collects_imgs.img_1 = mlx_xpm_file_to_image(game->mlx,
-			"sprites/plant_04.xpm",
+			"sprites/shit_02.xpm",
 			&game->img_size.x, &game->img_size.y);
 	game->collects_imgs.current_img = game->collects_imgs.img_0;
 	game->effect.img = mlx_xpm_file_to_image(game->mlx,
