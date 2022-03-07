@@ -25,6 +25,3 @@ $>
 $>./union "rien" | cat -e
 $
 $>
-
-ciao cazzo
-cazoi
