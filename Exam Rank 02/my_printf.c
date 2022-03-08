@@ -6,7 +6,7 @@
 /*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 20:20:52 by asalvemi          #+#    #+#             */
-/*   Updated: 2022/02/28 19:00:55 by asalvemi         ###   ########.fr       */
+/*   Updated: 2022/03/08 21:54:39 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,10 @@ int	ft_atoi(int n, char *ref_base, int n_base)
 	else
 	{
 		if (n < 10)
-			ft_putchar('0' + n);
+		{
+			if (n_base == 10 || (n_base == 16 && n != 0))
+				ft_putchar('0' + n);
+		}
 		else
 		{
 			ft_atoi(n / n_base, ref_base, n_base);
@@ -111,6 +114,11 @@ int ft_printf(const char *s, ...)
 int main()
 {
 
+	printf(" - Count ft_printf: %d\n", ft_printf("%d", 13));
+	printf(" - Count printf: %d\n", printf("%d", 13));
+	printf(" - Count ft_printf: %d\n", ft_printf("%x", 13));
+	printf(" - Count printf: %d\n", printf("%x", 13));
+
     ft_printf("Bo ma guarda un %s\n", "po");
     ft_printf("numero %d\n", -2147483648);
 
@@ -119,10 +127,8 @@ int main()
 
 	printf(" - Count ft_printf: %d\n", ft_printf("Hello %s", "toto"));
 	printf(" - Count printf: %d\n", printf("Hello %s", "toto"));
-	// printf(" - Count ft_printf: %d\n", ft_printf("%s %s", "I'm"));
-	// printf(" - Count printf: %d\n", printf("%s %s", "I'm"));
-	// printf(" - Count ft_printf: %d\n", ft_printf("Magic %s is %d", "number", 42));
-	// printf(" - Count printf: %d\n", printf("Magic %s is %d", "number", 42));
-	// printf(" - Count ft_printf: %d\n", ft_printf("Hexadecimal for %d is %x", 42, 589625));
-	// printf(" - Count printf: %d\n", printf("Hexadecimal for %d is %x", 42, 589625));
+	printf(" - Count ft_printf: %d\n", ft_printf("Magic %s is %d", "number", 42));
+	printf(" - Count printf: %d\n", printf("Magic %s is %d", "number", 42));
+	printf(" - Count ft_printf: %d\n", ft_printf("Hexadecimal for %d is %x", 42, 589625));
+	printf(" - Count printf: %d\n", printf("Hexadecimal for %d is %x", 42, 589625));
 }
