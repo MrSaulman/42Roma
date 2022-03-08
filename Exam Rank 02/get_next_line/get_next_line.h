@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ffrau <ffrau@student.42roma.it>            +#+  +:+       +#+        */
+/*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/26 12:42:28 by ffrau             #+#    #+#             */
-/*   Updated: 2022/02/26 12:44:30 by ffrau            ###   ########.fr       */
+/*   Created: 2022/03/08 17:38:22 by asalvemi          #+#    #+#             */
+/*   Updated: 2022/03/08 17:38:23 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H

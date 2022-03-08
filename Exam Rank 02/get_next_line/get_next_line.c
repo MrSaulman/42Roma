@@ -3,19 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-<<<<<<< HEAD:Exam Rank 02/gnl.c
 /*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/10 10:41:38 by ffrau             #+#    #+#             */
-/*   Updated: 2022/02/22 15:15:48 by asalvemi         ###   ########.fr       */
-=======
-/*   By: ffrau <ffrau@student.42roma.it>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/10 10:41:38 by ffrau             #+#    #+#             */
-/*   Updated: 2022/02/26 12:43:16 by ffrau            ###   ########.fr       */
->>>>>>> 48bf1b1fe688a29dae54fd5e14b6a6c37a4ba060:Exam Rank 02/get_next_line/get_next_line.c
+/*   Created: 2022/03/08 17:38:15 by asalvemi          #+#    #+#             */
+/*   Updated: 2022/03/08 17:38:17 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "get_next_line.h"
 
