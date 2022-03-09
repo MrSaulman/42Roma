@@ -1,42 +1,22 @@
-#include <stdarg.h>
-#include <unistd.h>
 
-int ft_printf(const char *s, ...)
+
+#include <stdio.h> 
+int main()
 {
-    va_list list;
-    int i;
-    int count;
-
-    if (!s)
-        return (0);
-    i = 0;
-    count = 0;
-
-    va_start(list, s);
-    
-    while (s[i])
-    {
-        if (s[i] == '%')
-        {
-            char type = s[i + 1];
-            if (type == 's')
-            {
-                count += ft_putstr(va_arg(list, char *));
-            }
-            else if (type == 'd')
-            {
-                count += ft_atoi(va_arg(list, int), "0123456789", 10);
-            }
-            else if (type == 'x')
-            {
-                count += ft_atoi(va_arg(list, unsigned int), "0123456789abcdef", 16);
-            }
-            i += 2;
-        }
-        if (!s[i])
-            return (count);
-        count  += ft_putchar(s[i]);
-        i++;
-    }
-    return (count);
+    ft_printf("Ma guarda un %s\n", "po'");
+	printf("Ma guarda un %s\n", "po'");
+    ft_printf("MIN int: %d\n", -2147483648);
+	printf("MIN int: %d\n", -2147483648);
+	// ft_printf("%s\n", NULL);
+	// printf("%s\n", NULL);
+    printf(" - Count ft_printf: %d\n", ft_printf("%s", NULL));
+	printf(" - Count printf: %d\n", printf("%s", NULL));
+	// printf(" - Count ft_printf: %d\n", ft_printf("Hello %s", "toto"));
+	// printf(" - Count printf: %d\n", printf("Hello %s", "toto"));
+	// printf(" - Count ft_printf: %d\n", ft_printf("%s %s", "I'm"));
+	// printf(" - Count printf: %d\n", printf("%s %s", "I'm"));
+	printf(" - Count ft_printf: %d\n", ft_printf("Magic %s is %d", "number", 42));
+	printf(" - Count printf: %d\n", printf("Magic %s is %d", "number", 42));
+	printf(" - Count ft_printf: %d\n", ft_printf("Hexadecimal for %d is %x", 42, 42));
+	printf(" - Count printf: %d\n", printf("Hexadecimal for %d is %x", 42, 42));
 }
