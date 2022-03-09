@@ -6,7 +6,7 @@
 /*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 20:20:52 by asalvemi          #+#    #+#             */
-/*   Updated: 2022/02/28 19:00:55 by asalvemi         ###   ########.fr       */
+/*   Updated: 2022/03/08 21:54:39 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,10 @@ int	ft_atoi(int n, char *ref_base, int n_base)
 	else
 	{
 		if (n < 10)
-			ft_putchar('0' + n);
+		{
+			if (n_base == 10 || (n_base == 16 && n != 0))
+				ft_putchar('0' + n);
+		}
 		else
 		{
 			if (n < 16 && n_base == 16)
