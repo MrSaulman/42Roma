@@ -6,7 +6,7 @@
 /*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 10:41:38 by ffrau             #+#    #+#             */
-/*   Updated: 2022/02/22 17:15:29 by asalvemi         ###   ########.fr       */
+/*   Updated: 2022/03/12 16:29:21 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*get_next_line(int fd)
 	char storage[999999];
 	char *malloc_storage;
 	char buffer[1];
-	int i;
+	int i, ret = 1;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
@@ -30,7 +30,7 @@ char	*get_next_line(int fd)
 	i = 0;
 	storage[i] = 0;
 	// On success, read returns the number of bytes (zero indicates end of file)
-	while (read(fd, buffer, 1) == 1)
+	while ((ret = read(fd, buffer, 1)) == 1)
 	{
 		storage[i] = buffer[0];
 		storage[i + 1] = '\0';
@@ -38,6 +38,8 @@ char	*get_next_line(int fd)
 			break;
 		i++;
 	}
+	if (ret == 0)
+		return (NULL);
 	if (!storage[0])
 		return (NULL);
 	malloc_storage = malloc(i + 1);
