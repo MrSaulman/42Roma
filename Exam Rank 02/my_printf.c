@@ -6,7 +6,7 @@
 /*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 20:20:52 by asalvemi          #+#    #+#             */
-/*   Updated: 2022/03/12 16:42:17 by asalvemi         ###   ########.fr       */
+/*   Updated: 2022/03/15 17:16:38 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,14 +118,18 @@ int ft_printf(const char *s, ...)
 #include <stdio.h> 
 int main()
 {
-  	ft_printf("MIN int: %d\n", -2147483648);
-	printf("MIN int: %d\n", -2147483648);
+  	// ft_printf("MIN int: %d\n", -2147483648);
+	// printf("MIN int: %d\n", -2147483648);
   	printf(" - Count ft_printf: %d\n", ft_printf("%d", 0));
 	printf(" - Count printf: %d\n", printf("%d", 0));
 	printf(" - Count ft_printf: %d\n", ft_printf("%x", 0));
 	printf(" - Count printf: %d\n", printf("%x", 0));
 	printf(" - Count ft_printf: %d\n", ft_printf("Hexadecimal for %d is %x", 13, 13));
 	printf(" - Count printf: %d\n", printf("Hexadecimal for %d is %x", 13, 13));
+	printf(" - Count ft_printf: %d\n", ft_printf("%d", 3456));
+	printf(" - Count printf: %d\n", printf("%d", 3456));
+	printf(" - Count ft_printf: %d\n", ft_printf("%x", 3456));
+	printf(" - Count printf: %d\n", printf("%x", 3456));
 
   	printf(" - Count ft_printf: %d\n", ft_printf("%s", NULL));
 	printf(" - Count printf: %d\n", printf("%s", NULL));
