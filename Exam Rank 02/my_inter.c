@@ -25,9 +25,7 @@ int main(int argc, char **argv)
             while (argv[i][j])
             {
                 if (i == 2 && ascii[(int)argv[i][j]] == 0)
-                {
                     ascii[(int)argv[i][j]] = 1;
-                }
                 else if (i == 1 && ascii[(int)argv[i][j]] == 1)
                 {
                     write(1, &argv[i][j], 1);
