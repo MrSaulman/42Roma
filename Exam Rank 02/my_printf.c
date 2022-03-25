@@ -10,77 +10,78 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <stdarg.h>
-# include <unistd.h>
+#include <stdio.h>
+#include <stdarg.h>
+#include <unistd.h>
 
-int	ft_putchar(char c)
+int ft_putchar(char c)
 {
 	return (write(1, &c, 1));
 }
 
-int	ft_putstr(char *s)
+int ft_putstr(char *s)
 {
-	int	count;
+	int count = 0;
 
 	if (!s)
 		return (ft_putstr("(null)"));
-		
-	count = 0;
 	while (s[count])
 		count += ft_putchar(s[count]);
 	return (count);
 }
 
-int	n_len(long n, int n_base)
+int n_len(long n, int base)
 {
-	int	count = 0;
+	int count = 0;
 
 	if (n == 0)
-		return (1);
+		count++;
 	if (n < 0)
 	{
-		count++;
 		n *= -1;
+		count++;
 	}
 	while (n > 0)
 	{
-		n /= n_base;
+		n /= base;
 		count++;
 	}
 	return (count);
 }
 
-int	ft_atoi(int n, char *ref_base, int n_base)
+int ft_atoi(long n, char *ref, int base)
 {
 	if (n == -2147483648)
 	{
-		ft_atoi((n / n_base), ref_base, n_base);
+		ft_atoi(n / base, ref, base);
 		ft_putchar('8');
 	}
 	else if (n < 0)
 	{
-		if (n_base != 16)
+		if (base != 16)
+		{
 			ft_putchar('-');
-		ft_atoi(n * -1, ref_base, n_base);		
+			ft_atoi(n * -1, ref, base);
+		}
+		else
+			ft_atoi(4294967295 - (n * -1), ref, base);
 	}
 	else
 	{
 		if (n < 10)
-		{
 			ft_putchar('0' + n);
-		}
 		else
 		{
-			if (n < 16 && n_base == 16)
-				ft_putchar(ref_base[n % n_base]);
+			if (n < 16 && base == 16)
+				ft_putchar(ref[n % base]);
 			else
 			{
-				ft_atoi(n / n_base, ref_base, n_base);
-				ft_putchar(ref_base[n % n_base]);
+				ft_atoi(n / base, ref, base);
+				ft_putchar(ref[n % base]);
 			}
 		}
 	}
-	return (n_len(n, n_base));
+	return (n_len(n, base));
 }
 
 int ft_printf(const char *s, ...)
@@ -90,21 +91,21 @@ int ft_printf(const char *s, ...)
 	int count;
 
 	if (!s)
-		return (0);
+		return (NULL);
 	i = 0;
 	count = 0;
 	va_start(list, s);
-	while(s[i])
+	while (s[i])
 	{
 		if (s[i] == '%')
 		{
 			char type = s[i + 1];
 			if (type == 's')
-				count += (ft_putstr(va_arg(list, char *)));
+				count += ft_putstr(va_arg(list, char *));
 			else if (type == 'd')
-				count += (ft_atoi(va_arg(list, int), "0123456789", 10));
+				count += ft_atoi(va_arg(list, int), "0123456789", 10);
 			else if (type == 'x')
-				count += (ft_atoi(va_arg(list, unsigned int), "0123456789abcdef", 16));
+				count += ft_atoi(va_arg(list, unsigned int), "0123456789abcdef", 16);
 			i += 2;
 		}
 		if (!s[i])
@@ -115,17 +116,27 @@ int ft_printf(const char *s, ...)
 	return (count);
 }
 
-#include <stdio.h> 
+#include <stdio.h>
 int main()
 {
-	// ft_printf("MIN int: %d\n", -2147483648);
-	// printf("MIN int: %d\n", -2147483648);
+	ft_printf("MIN int: %d\n", -2147483648);
+	printf("MIN int: %d\n", -2147483648);
+	printf(" - Count ft_printf: %d\n", ft_printf("%d is %x", -13, -13));
+	printf(" - Count printf: %d\n", printf("%d is %x", -13, -13));
+	printf(" - Count ft_printf: %d\n", ft_printf("%x", -14));
+	printf(" - Count printf: %d\n", printf("%x", -14));
 	printf(" - Count ft_printf: %d\n", ft_printf("%d", 0));
 	printf(" - Count printf: %d\n", printf("%d", 0));
 	printf(" - Count ft_printf: %d\n", ft_printf("Hexadecimal for %d is %x", 0, 0));
 	printf(" - Count printf: %d\n", printf("Hexadecimal for %d is %x", 0, 0));
 	printf(" - Count ft_printf: %d\n", ft_printf("Hexadecimal for %d is %x", 13, 13));
 	printf(" - Count printf: %d\n", printf("Hexadecimal for %d is %x", 13, 13));
+	printf(" - Count ft_printf: %d\n", ft_printf("%x", 14));
+	printf(" - Count printf: %d\n", printf("%x", 14));
+	printf(" - Count ft_printf: %d\n", ft_printf("Hexadecimal for %d is %x", 15, 15));
+	printf(" - Count printf: %d\n", printf("Hexadecimal for %d is %x", 15, 15));
+	printf(" - Count ft_printf: %d\n", ft_printf("Hexadecimal for %d is %x", 16, 16));
+	printf(" - Count printf: %d\n", printf("Hexadecimal for %d is %x", 16, 16));
 	printf(" - Count ft_printf: %d\n", ft_printf("Hexadecimal for %d is %x", 42, 42));
 	printf(" - Count printf: %d\n", printf("Hexadecimal for %d is %x", 42, 42));
 	printf(" - Count ft_printf: %d\n", ft_printf("%d", 3456));
