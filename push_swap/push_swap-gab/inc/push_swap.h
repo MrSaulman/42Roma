@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcrocett <gcrocett@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 10:57:02 by gcrocett          #+#    #+#             */
-/*   Updated: 2021/10/14 11:09:16 by gcrocett         ###   ########.fr       */
+/*   Updated: 2022/04/13 16:33:39 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int		check_integers(int argc, char **argv);
 int		check_arguments(int argc, char **argv);
 void	create_stack(int argc, char **argv, t_Node **Stack);
 char	**ft_split(const char *s, char c);
-int		ft_count_words(const char *s, char c);
+int		ft_count_numbers_in_a_string(const char *str, char delimiter);
 char	**ft_shift(int argc, char **argv);
 int		list_sorted(t_Node **Stack);
 void	parse_alg(t_Node **StackA, t_Node **StackB);

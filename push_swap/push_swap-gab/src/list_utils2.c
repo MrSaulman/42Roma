@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_utils2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcrocett <gcrocett@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 14:45:46 by ldalle-a          #+#    #+#             */
-/*   Updated: 2021/10/14 10:59:52 by gcrocett         ###   ########.fr       */
+/*   Updated: 2022/04/08 19:05:22 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,9 @@ int	list_sorted(t_Node **Stack)
 		if (tmp->data < tmp->next->data)
 			tmp = tmp->next;
 		else
-			return (1);
+			return (0);
 	}
-	return (0);
+	return (1);
 }
 
 void	set_index(t_Node **Stack)

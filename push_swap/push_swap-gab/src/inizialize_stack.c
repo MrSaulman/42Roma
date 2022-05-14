@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   inizialize_stack.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcrocett <gcrocett@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 14:57:58 by ldalle-a          #+#    #+#             */
-/*   Updated: 2021/10/14 11:13:29 by gcrocett         ###   ########.fr       */
+/*   Updated: 2022/04/08 19:05:15 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	inizialize_stack(int argc, char **argv, int i)
 	null_stack(&stack_a, &stack_b);
 	delete_first_node(&stack_b);
 	create_stack(argc, argv, &stack_a);
-	if (i == 0 && list_sorted(&stack_a) == 0 && (!stack_b))
+	if (i == 0 && list_sorted(&stack_a) == 1 && (!stack_b))
 	{
 		free_stacks(&stack_a, &stack_b);
 		exit(0);

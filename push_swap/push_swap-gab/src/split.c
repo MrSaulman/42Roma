@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   split.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcrocett <gcrocett@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 14:20:19 by ldalle-a          #+#    #+#             */
-/*   Updated: 2021/10/14 11:00:08 by gcrocett         ###   ########.fr       */
+/*   Updated: 2022/04/13 16:32:49 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,25 +29,25 @@ char	**ft_shift(int argc, char **argv)
 	return (dest);
 }
 
-int	ft_count_words(const char *s, char c)
+int	ft_count_numbers_in_a_string(const char *str, char delimiter)
 {
 	int	i;
-	int	words;
+	int	count;
 
 	i = 0;
-	words = 0;
-	while (s[i])
+	count = 0;
+	while (str[i])
 	{
-		if (s[i] != c)
+		if (str[i] != delimiter)
 		{
-			words++;
-			while (s[i] != c && s[i])
+			count++;
+			while (str[i] != delimiter && str[i])
 				i++;
 		}
 		else
 			i++;
 	}
-	return (words);
+	return (count);
 }
 
 char	**ft_size_words(const char *s, char c, char **dest)
@@ -87,7 +87,7 @@ char	**ft_split(const char *s, char c)
 	arr[0] = 0;
 	arr[1] = 0;
 	arr[2] = 0;
-	dest = malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
+	dest = malloc(sizeof(char *) * (ft_count_numbers_in_a_string(s, c) + 1));
 	if (!(ft_size_words(s, c, dest)))
 		return (NULL);
 	while (s[arr[0]] && !(arr[2]))
