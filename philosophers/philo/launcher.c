@@ -6,7 +6,7 @@
 /*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 19:12:26 by asalvemi          #+#    #+#             */
-/*   Updated: 2022/05/14 19:12:28 by asalvemi         ###   ########.fr       */
+/*   Updated: 2022/05/17 16:32:38 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	philo_eats(t_philosopher *philo)
 	action_print(rules, philo->id, "has taken a fork");
 	pthread_mutex_lock(&(rules->meal_check));
 	action_print(rules, philo->id, "is eating");
-	philo->t_last_meal = timestamp();
+	philo->ts_last_meal = timestamp();
 	pthread_mutex_unlock(&(rules->meal_check));
 	smart_sleep(rules->time_eat, rules);
 	(philo->x_ate)++;
@@ -78,7 +78,7 @@ void	death_checker(t_rules *r, t_philosopher *p)
 		while (++i < r->nb_philo && !(r->dead))
 		{
 			pthread_mutex_lock(&(r->meal_check));
-			if (time_diff(p[i].t_last_meal, timestamp()) > r->time_death)
+			if (time_diff(p[i].ts_last_meal, timestamp()) > r->time_death)
 			{
 				action_print(r, i, "died");
 				r->dead = 1;
@@ -108,7 +108,7 @@ int		launcher(t_rules *rules)
 	{
 		if (pthread_create(&(phi[i].thread_id), NULL, p_thread, &(phi[i])))
 			return (1);
-		phi[i].t_last_meal = timestamp();
+		phi[i].ts_last_meal = timestamp();
 		i++;
 	}
 	death_checker(rules, rules->philosophers);

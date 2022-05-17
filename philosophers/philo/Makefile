@@ -5,7 +5,7 @@ SRCS	+= error_manager.c init.c utils.c launcher.c
 
 OBJS	= $(SRCS:.c=.o)
 
-NAME	= philo_one
+NAME	= philo
 
 CLANG	= clang
 

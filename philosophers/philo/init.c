@@ -6,7 +6,7 @@
 /*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 19:11:47 by asalvemi          #+#    #+#             */
-/*   Updated: 2022/05/14 19:32:03 by asalvemi         ###   ########.fr       */
+/*   Updated: 2022/05/17 16:32:19 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	init_philosophers(t_rules *rules)
 		rules->philosophers[i].x_ate = 0;
 		rules->philosophers[i].left_fork_id = i;
 		rules->philosophers[i].right_fork_id = (i + 1) % rules->nb_philo;
-		rules->philosophers[i].t_last_meal = 0;
+		rules->philosophers[i].ts_last_meal = 0;
 		rules->philosophers[i].rules = rules;
 	}
 	return (0);

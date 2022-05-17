@@ -6,7 +6,7 @@
 /*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 19:12:45 by asalvemi          #+#    #+#             */
-/*   Updated: 2022/05/14 19:12:47 by asalvemi         ###   ########.fr       */
+/*   Updated: 2022/05/17 17:40:29 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef	struct			s_philosopher
 	int					x_ate;
 	int					left_fork_id;
 	int					right_fork_id;
-	long long			t_last_meal;
+	long long			ts_last_meal;
 	struct s_rules		*rules;
 	pthread_t			thread_id;
 }						t_philosopher;
@@ -66,7 +66,7 @@ int						init_all(t_rules *rules, char **argv);
 ** ----- utils.c -----
 */
 
-int						ft_atoi(const char *str);
+int						ft_get_parameter(const char *str);
 void					action_print(t_rules *rules, int id, char *string);
 long long				timestamp(void);
 long long				time_diff(long long past, long long pres);
