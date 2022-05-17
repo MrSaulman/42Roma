@@ -6,13 +6,13 @@
 /*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 19:12:54 by asalvemi          #+#    #+#             */
-/*   Updated: 2022/05/14 19:31:26 by asalvemi         ###   ########.fr       */
+/*   Updated: 2022/05/17 19:19:26 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int			ft_get_parameter(const char *str)
+int	ft_get_parameter(const char *str)
 {
 	long int	n;
 	int			sign;
@@ -48,9 +48,9 @@ long long	time_diff(long long past, long long pres)
 	return (pres - past);
 }
 
-void		smart_sleep(long long time, t_rules *rules)
+void	smart_sleep(long long time, t_rules *rules)
 {
-	long long i;
+	long long	i;
 
 	i = timestamp();
 	while (!(rules->dead))
@@ -61,7 +61,7 @@ void		smart_sleep(long long time, t_rules *rules)
 	}
 }
 
-void		action_print(t_rules *rules, int id, char *string)
+void	action_print(t_rules *rules, int id, char *string)
 {
 	pthread_mutex_lock(&(rules->writing));
 	if (!(rules->dead))

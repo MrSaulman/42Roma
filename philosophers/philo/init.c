@@ -6,7 +6,7 @@
 /*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 19:11:47 by asalvemi          #+#    #+#             */
-/*   Updated: 2022/05/17 16:32:19 by asalvemi         ###   ########.fr       */
+/*   Updated: 2022/05/17 19:06:33 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	init_mutex(t_rules *rules)
 {
-	int i;
+	int		i;
 
 	i = rules->nb_philo;
 	while (--i >= 0)
@@ -31,7 +31,7 @@ int	init_mutex(t_rules *rules)
 
 int	init_philosophers(t_rules *rules)
 {
-	int i;
+	int		i;
 
 	i = rules->nb_philo;
 	while (--i >= 0)

@@ -6,7 +6,7 @@
 /*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 19:12:26 by asalvemi          #+#    #+#             */
-/*   Updated: 2022/05/17 16:32:38 by asalvemi         ###   ########.fr       */
+/*   Updated: 2022/05/17 19:08:17 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	philo_eats(t_philosopher *philo)
 {
-	t_rules *rules;
+	t_rules		*rules;
 
 	rules = philo->rules;
 	pthread_mutex_lock(&(rules->forks[philo->left_fork_id]));
@@ -57,7 +57,7 @@ void	*p_thread(void *void_philosopher)
 
 void	exit_launcher(t_rules *rules, t_philosopher *philos)
 {
-	int i;
+	int		i;
 
 	i = -1;
 	while (++i < rules->nb_philo)
@@ -70,7 +70,7 @@ void	exit_launcher(t_rules *rules, t_philosopher *philos)
 
 void	death_checker(t_rules *r, t_philosopher *p)
 {
-	int i;
+	int		i;
 
 	while (!(r->all_ate))
 	{
@@ -96,7 +96,7 @@ void	death_checker(t_rules *r, t_philosopher *p)
 	}
 }
 
-int		launcher(t_rules *rules)
+int	launcher(t_rules *rules)
 {
 	int				i;
 	t_philosopher	*phi;

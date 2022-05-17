@@ -6,7 +6,7 @@
 /*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 19:12:45 by asalvemi          #+#    #+#             */
-/*   Updated: 2022/05/17 17:40:29 by asalvemi         ###   ########.fr       */
+/*   Updated: 2022/05/17 19:11:54 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 # include <string.h>
 # include <pthread.h>
 
-struct s_rules;
+struct	s_rules;
 
-typedef	struct			s_philosopher
+typedef struct s_philosopher
 {
 	int					id;
 	int					x_ate;
@@ -33,7 +33,7 @@ typedef	struct			s_philosopher
 	pthread_t			thread_id;
 }						t_philosopher;
 
-typedef struct			s_rules
+typedef struct s_rules
 {
 	int					nb_philo;
 	int					time_death;

@@ -6,7 +6,7 @@
 /*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 18:00:25 by asalvemi          #+#    #+#             */
-/*   Updated: 2022/05/14 18:00:34 by asalvemi         ###   ########.fr       */
+/*   Updated: 2022/05/17 19:06:53 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	write_error(char *str)
 {
-	int len;
+	int		len;
 
 	len = 0;
 	while (str[len])
