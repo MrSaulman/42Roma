@@ -6,7 +6,15 @@
 /*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 16:35:59 by asalvemi          #+#    #+#             */
-/*   Updated: 2022/06/16 16:37:31 by asalvemi         ###   ########.fr       */
+/*   Updated: 2022/06/22 18:54:50 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "Phonebook.hpp"
+
+Phonebook::Phonebook() {
+    this->amount = 0;
+}
+
+Phonebook::~Phonebook() {}
 

@@ -6,7 +6,7 @@
 /*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 16:40:38 by asalvemi          #+#    #+#             */
-/*   Updated: 2022/06/16 16:48:33 by asalvemi         ###   ########.fr       */
+/*   Updated: 2022/06/22 18:55:36 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ class Contact {
 	Contact();
 	virtual	~Contact();
 
-	bool	setInformation(int index);
-	void	displayHeader();
+	bool	set_information(int index);
+	void	display_header();
 	void	display();
 };
 
