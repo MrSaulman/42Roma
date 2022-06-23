@@ -13,7 +13,7 @@
 SRCS			= main.cpp Annuaire.cpp Contact.cpp
 OBJS			= $(SRCS:.cpp=.o)
 
-CXX				= clang++
+CXX				= g++
 RM				= rm -f
 CXXFLAGS		= -Wall -Wextra -Werror -I.
 
