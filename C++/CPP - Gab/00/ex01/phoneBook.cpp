@@ -13,6 +13,7 @@ void PhoneBook::init()
         this->contacts[i].setEmpty();
 }
 
+
 void PhoneBook::SearchContact(int index)
 {
     if (this->contacts[index].isEmpty() == true)
@@ -96,7 +97,7 @@ std::string formatPar(std::string par)
     int i = 0, dif = 0, count = 0;
 
     count = strLen(par);
-    if (count >= 9)
+    if (count >= 9) //?? non dovrebbe essere > 10?
     {
         par[9] = '.';
         while (i <= 9)
@@ -113,7 +114,7 @@ std::string formatPar(std::string par)
             line[i] = ' ';
             i++; 
         }
-        while (i <= count + dif)
+        while (i <= count + dif) // questo me sa che è sempre 9?
         {
             line[i] = par[i - dif - 1];
             i++;
