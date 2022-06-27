@@ -1,39 +1,91 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.cpp                                        :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 18:55:23 by asalvemi          #+#    #+#             */
-/*   Updated: 2022/06/23 14:43:05 by asalvemi         ###   ########.fr       */
+/*   Updated: 2022/06/27 17:23:31 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-std::string Contact::fields[7] = {
-    "Firstname",
-    "LastName",
-    "Nickname",
-    "Address",
-    "Email",
-    "Phone",
-    "Birthday"
-};
-
-Contact::Contact() {
-    for (int i = Firstname; i <= Birthday; i++)
-        this->informations[i] = std::string();
+void Contact::setEmpty()
+{
+    this->is_empty = true;
 }
 
-Contact::~Contact() {}
-
-bool Contact::set_information(int index)
+bool Contact::isEmpty()
 {
-    this->index = index;
-    for (int i = Firstname; i <= Birthday; i++)
-    {
-        
-    }
+    if (this->is_empty == true)
+        return (1);
+    else
+        return (0);
+}
+
+bool Contact::isLast()
+{
+    return(this->is_last);
+}
+
+void Contact::setLast(bool last)
+{
+    this->is_last = last;
+}
+
+void Contact::setFirstName(std::string f_name)
+{
+    this->first_name = f_name;
+    this->is_empty = false;
+}
+
+void Contact::setLastname(std::string l_name)
+{
+    this->last_name = l_name;
+    this->is_empty = false;
+}
+
+void Contact::setNick(std::string nick)
+{
+    this->nickname = nick;
+    this->is_empty = false;
+}
+
+void Contact::setNumber(std::string number)
+{
+    this->phone_number = number;
+    this->is_empty = false;
+}
+
+void Contact::setSecret(std::string secret)
+{
+    this->secret = secret;
+    this->is_empty = false;
+}
+
+std::string Contact::getFirstName()
+{
+    return(this->first_name);
+}
+
+std::string Contact::getLastName()
+{
+    return(this->last_name);
+}
+
+std::string Contact::getNick()
+{
+    return(this->nickname);
+}
+
+std::string Contact::getNumber()
+{
+    return(this->phone_number);
+}
+
+std::string Contact::getSecret()
+{
+    return(this->secret);
 }

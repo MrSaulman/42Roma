@@ -23,22 +23,22 @@ int main()
         {
             index = phoneBook.searchAddIndex();
             std::cout << "First name: ";
-            getline (std::cin, f_name);
+            getline(std::cin, f_name);
             std::cout << "Last name: ";
-            getline (std::cin, l_name);
+            getline(std::cin, l_name);
             std::cout << "Nickname: ";
-            getline (std::cin, nick);
+            getline(std::cin, nick);
             std::cout << "Number: ";
-            getline (std::cin, number);
+            getline(std::cin, number);
             std::cout << "Secret: ";
-            getline (std::cin, secret);
+            getline(std::cin, secret);
             phoneBook.addContact(index, f_name, l_name, nick, number, secret);
         }
         else if (line == "SEARCH")
         {
             phoneBook.displayContacts();
             std::cout << std::endl << "Wich index you want to display? ";
-            getline (std::cin, index_c);
+            getline(std::cin, index_c);
             display_index = index_atoi(index_c);
             if (display_index == -1)
                 std::cout << "index out of range" << std::endl;
