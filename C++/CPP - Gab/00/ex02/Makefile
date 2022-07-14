@@ -1,11 +1,13 @@
-NAME = Account
+NAME = a.out
 
 FLAGS = -Wall -Wextra -Werror
+
+FILES = test.cpp Account.cpp
 
 INCLUDE = Account.hpp
 
 all:	
-	@g++ $(FLAGS) -I$(INCLUDE) test.cpp account.cpp -o $(NAME)
+	@g++ $(FLAGS) -I$(INCLUDE) $(FILES) -o $(NAME)
 
 clean:	
 	@rm $(NAME)

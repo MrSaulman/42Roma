@@ -12,11 +12,11 @@
 class StringManip
 {
     public:
-        void searchStr();
-        void CfileAndW();
+        void getPath(const std::string& path);
         void setSub(std::string sub);
         void setToSub(std::string to_sub);
-        void getStrIn(const std::string& path);
+        void searchStr();
+        void CfileAndW();
         void printInStr();
 
     private:

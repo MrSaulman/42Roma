@@ -26,7 +26,7 @@ void StringManip::searchStr()
     }
     if (count_subst == 0)
     {
-        std::cout << "s1 not fount in text" << std::endl;
+        std::cout << "s1 not found." << std::endl;
         return;
     }
 
@@ -42,7 +42,7 @@ void StringManip::setToSub(std::string to_sub)
     this->to_sub = to_sub;
 }
 
-void StringManip::getStrIn(const std::string& path)
+void StringManip::getPath(const std::string& path)
 {
     struct stat sb = {};
     std::string res;

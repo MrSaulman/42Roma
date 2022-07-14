@@ -7,7 +7,7 @@ int main(int argc, char **argv)
     if(argc != 4)
         return (0);
 
-    strManip.getStrIn(argv[1]);
+    strManip.getPath(argv[1]);
     strManip.setSub(argv[2]);
     strManip.setToSub(argv[3]);
     strManip.searchStr();

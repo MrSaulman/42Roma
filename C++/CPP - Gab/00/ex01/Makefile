@@ -2,10 +2,12 @@ NAME = phonebook
 
 FLAGS = -Wall -Wextra -Werror
 
-FILES = phoneBook.cpp contact.cpp main.cpp
+FILES = phonebook.cpp showPhoneBook.cpp addContract.cpp contactClass.cpp
+
+INCLUDE = contactClass.hpp
 
 all:	
-	@g++ $(FLAGS) $(FILES) -o $(NAME)
+	@g++ $(FLAGS) -I$(INCLUDE) $(FILES) -o $(NAME)
 
 clean:	
 	@rm $(NAME)
