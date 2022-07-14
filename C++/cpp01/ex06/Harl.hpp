@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/14 18:05:38 by asalvemi          #+#    #+#             */
-/*   Updated: 2022/07/14 18:05:39 by asalvemi         ###   ########.fr       */
+/*   Created: 2022/07/14 18:05:46 by asalvemi          #+#    #+#             */
+/*   Updated: 2022/07/14 18:05:47 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef KAREN_H
+# define KAREN_H
 
-int main() 
+#include <string>
+#include <iostream>
+
+class Harl
 {
-    Harl harl;
+    public:
+        Harl();
+        ~Harl();
+        void    complain(std::string level);
 
-    harl.complain("DEBUG");
-    harl.complain("INFO");
-    harl.complain("WARNING");
-    harl.complain("ERROR");
-    return(0);
-}
+    private:
+        void    debug( void );
+        void    info( void );
+        void    warning( void );
+        void    error( void ); 
+};
+
+#endif

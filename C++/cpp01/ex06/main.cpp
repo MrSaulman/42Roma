@@ -1,17 +1,29 @@
-#include "Karen.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/14 18:05:50 by asalvemi          #+#    #+#             */
+/*   Updated: 2022/07/14 18:05:50 by asalvemi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Harl.hpp"
 
 int main() 
 {
-    Karen karen;
+    Harl harl;
 
-    karen.complain("DEBUG");
+    harl.complain("DEBUG");
     std::cout << std::endl;
-    karen.complain("INFO");
+    harl.complain("INFO");
     std::cout << std::endl;
-    karen.complain("WARNING");
+    harl.complain("WARNING");
     std::cout << std::endl;
-    karen.complain("ERROR");
+    harl.complain("ERROR");
     std::cout << std::endl;
-    karen.complain("");
+    harl.complain("");
     return(0);
 }

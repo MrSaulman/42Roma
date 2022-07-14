@@ -1,8 +1,8 @@
-NAME = karenFilter
+NAME = harlFilter
 
 FLAGS = -Wall -Wextra -Werror
 
-FILES = main.cpp Karen.cpp
+FILES = main.cpp Harl.cpp
 
 all:	
 	@g++ $(FLAGS) $(FILES) -o $(NAME)
