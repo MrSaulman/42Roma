@@ -97,4 +97,4 @@ Fixed& Fixed::min(Fixed& a, Fixed& b) { return a <= b ? a : b; }
 Fixed const& Fixed::min(const Fixed& a, const Fixed& b) { return a <= b ? a : b; }
 Fixed& Fixed::max(Fixed& a, Fixed& b) { return a >= b ? a : b; }
 Fixed const& Fixed::max(const Fixed& a, const Fixed& b) { return a >= b ? a : b; }
-    
+
