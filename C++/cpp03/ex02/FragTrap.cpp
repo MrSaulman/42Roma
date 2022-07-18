@@ -5,7 +5,20 @@ FragTrap::FragTrap() : ClapTrap()
     this->_hitpoints = 100;
     this->_energy_points = 100;
     this->_attack_damage = 30;
-    std::cout << "Name FragTrap : " << "unknown" << " hitpoint: " << this->_hitpoints << " point: " << this->_energy_points << " attack damage: " << this->_attack_damage << std::endl;
+    std::cout << "Name FragTrap: unknown, hitpoints: " << this->_hitpoints << ", energy points: " << this->_energy_points << ", attack damage: " << this->_attack_damage << std::endl;
+}
+
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
+{
+    this->_hitpoints = 100;
+    this->_energy_points = 100;
+    this->_attack_damage = 30;
+    std::cout << "Name FragTrap: " << this->_name << ", hitpoints: " << this->_hitpoints << ", energy points: " << this->_energy_points << ", attack damage: " << this->_attack_damage << std::endl;
+}
+
+FragTrap::FragTrap(FragTrap const &obj) : ClapTrap(obj._name)
+{
+    *this = obj;
 }
 
 FragTrap::~FragTrap()
@@ -14,19 +27,6 @@ FragTrap::~FragTrap()
         std::cout << "Destructor FragTrap called for " << this->_name << std::endl;
     else
         std::cout << "Destructor FragTrap called for <unknown>" << std::endl;
-}
-
-FragTrap::FragTrap(std::string name) : ClapTrap(name)
-{
-    this->_hitpoints = 100;
-    this->_energy_points = 100;
-    this->_attack_damage = 30;
-    std::cout << "Name FragTrap: " << this->_name << " hitpoint: " << this->_hitpoints << " point: "  << this->_energy_points << " attack damage: " << this->_attack_damage << std::endl;
-}
-
-FragTrap::FragTrap(FragTrap const &obj) : ClapTrap(obj._name)
-{
-    *this = obj;
 }
 
 FragTrap &FragTrap::operator=(FragTrap const &obj)

@@ -8,9 +8,8 @@ int main()
 
     franco.highFivesGuys();
     lollo.attack("franco");
-    franco.takeDamage(100);
+    franco.takeDamage(30);
     gigi.attack("franco");
-    franco.takeDamage(100);
-    franco.beRepaired(100);
-    
+    franco.takeDamage(30);
+    franco.beRepaired(30);
 }

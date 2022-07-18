@@ -7,9 +7,9 @@ int main()
     ScavTrap gigi("gigi");
 
     lollo.attack("franco");
-    franco.takeDamage(100);
+    franco.takeDamage(20);
     gigi.attack("franco");
-    franco.takeDamage(100);
-    franco.beRepaired(100);
+    franco.takeDamage(20);
+    franco.beRepaired(20);
     franco.guardGate();
 }

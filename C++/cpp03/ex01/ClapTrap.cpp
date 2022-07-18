@@ -2,7 +2,8 @@
 
 ClapTrap::ClapTrap() : _name(""), _hitpoints(10), _energy_points(10), _attack_damage(0)
 {
-    std::cout << "Name : " << "unknown" << " hitpoint: " << this->_hitpoints << " point: " << this->_energy_points << " attack damage: " << this->_attack_damage << std::endl;
+    std::cout << "Name: unknown, hitpoints: " << this->_hitpoints
+              << " energy points: " << this->_energy_points << " attack damage: " << this->_attack_damage << std::endl;
 }
 
 ClapTrap::~ClapTrap()
@@ -13,9 +14,9 @@ ClapTrap::~ClapTrap()
         std::cout << "Destructor called for <unknown>" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) :  _name(name), _hitpoints(10), _energy_points(10), _attack_damage(0)
+ClapTrap::ClapTrap(std::string name) : _name(name), _hitpoints(10), _energy_points(10), _attack_damage(0)
 {
-    std::cout << "Name : " << this->_name << " hitpoint: " << this->_hitpoints << " point: "  << this->_energy_points << " attack damage: " << this->_attack_damage << std::endl;
+    std::cout << "Name: " << this->_name << ", hitpoints: " << this->_hitpoints << ", energy points: " << this->_energy_points << ", attack damage: " << this->_attack_damage << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &obj)
@@ -36,35 +37,45 @@ ClapTrap &ClapTrap::operator=(ClapTrap const &obj)
     return (*this);
 }
 
-void ClapTrap::attack(std::string const & target)
+void ClapTrap::attack(std::string const &target)
 {
-    if (this->_energy_points >= 10)
+    if (this->_energy_points > 0 && this->_hitpoints > 0)
     {
-        std::cout << this->_name << " attack " << target << " ,causing " << this->_hitpoints << " points of damage!" << std::endl;
-        this->_energy_points -= 10;
+        std::cout << this->_name << " attacks " << target << ", causing " << this->_attack_damage << " points of damage!" << std::endl;
+        this->_energy_points -= 1;
     }
     else
-        std::cout << "Low energy points!" << std::endl;
+        std::cout << this->_name << "cannot attack!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
     if (_hitpoints <= 0)
     {
-       std::cout << "Name : " << this->_name << " is already dead" << std::endl;
-       return ;
+        std::cout << "Name: " << this->_name << " is already dead" << std::endl;
+        return;
     }
-    std::cout << this->_name << " has taken damage for " << amount << std::endl;
+    std::cout << this->_name << " has taken damage for " << amount << " hitpoints." << std::endl;
     this->_hitpoints -= amount;
-    std::cout << "Name : " << this->_name << " hitpoint: " << this->_hitpoints << " point: "  << this->_energy_points << " attack damage: " << this->_attack_damage << std::endl;
+    std::cout << "Name: " << this->_name << ", hitpoints: " << this->_hitpoints << ", energy points: " << this->_energy_points << ", attack damage: " << this->_attack_damage << std::endl;
     if (_hitpoints <= 0)
-       std::cout << "Name : " << this->_name << " died" << std::endl;
+        std::cout << "Name: " << this->_name << " died" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-    std::cout << this->_name << " has been repaired for " << amount << std::endl;
+    if (_hitpoints <= 0)
+    {
+        std::cout << "Name: " << this->_name << " can't be repaired because it's dead." << std::endl;
+        return;
+    }
+    else if (_energy_points <= 0)
+    {
+        std::cout << "Name: " << this->_name << " can't be repaired because it's out of energy points." << std::endl;
+        return;
+    }
+    std::cout << this->_name << " has been repaired for " << amount << " hitpoints." << std::endl;
     this->_hitpoints += amount;
-    this->_energy_points += amount;
-    std::cout << "Name : " << this->_name << " hitpoint: " << this->_hitpoints << ", energy point: "  << this->_energy_points << ", attack damage: " << this->_attack_damage << std::endl;
+    this->_energy_points--;
+    std::cout << "Name: " << this->_name << ", hitpoints: " << this->_hitpoints << ", energy points: " << this->_energy_points << ", attack damage: " << this->_attack_damage << std::endl;
 }
