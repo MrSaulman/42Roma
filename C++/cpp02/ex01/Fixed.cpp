@@ -30,7 +30,7 @@ Fixed::~Fixed()
 
 Fixed& Fixed::operator=(const Fixed &obj)
 {
-    std::cout << "Assignation operator called" << std::endl;
+    std::cout << "Copy assignment operator called" << std::endl;
     _value = obj._value;
     return *this;
 }
