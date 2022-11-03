@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbarbant <gbarbant@student.42.fr>          +#+  +:+       +#+        */
+/*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 16:18:28 by gbarbant          #+#    #+#             */
-/*   Updated: 2022/11/03 17:14:03 by gbarbant         ###   ########.fr       */
+/*   Updated: 2022/11/03 18:09:50 by asalvemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 #include <mlx.h>
 #include <math.h>
 #include <fcntl.h>
-#include "libft/inc/libft.h"
-#include "libft/inc/get_next_line_bonus.h"
+#include "libft/libft.h"
+#include "get_next_line/get_next_line.h"
 
 typedef struct s_window
 {
