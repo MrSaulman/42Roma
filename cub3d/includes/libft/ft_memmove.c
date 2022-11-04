@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asalvemi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gbarbant <gbarbant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 14:16:05 by asalvemi          #+#    #+#             */
-/*   Updated: 2021/01/12 14:16:06 by asalvemi         ###   ########.fr       */
+/*   Updated: 2022/11/04 12:01:28 by gbarbant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	unsigned char		*ptr1;
 	const unsigned char	*ptr2;
 
-	ptr1 = (unsigned char*)dest;
-	ptr2 = (unsigned char*)src;
+	ptr1 = (unsigned char *)dest;
+	ptr2 = (unsigned char *)src;
 	i = 0;
 	if (!dest && !src)
 		return (NULL);

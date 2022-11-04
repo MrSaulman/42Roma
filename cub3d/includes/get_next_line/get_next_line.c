@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asalvemi <asalvemi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gbarbant <gbarbant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 19:25:36 by asalvemi          #+#    #+#             */
-/*   Updated: 2022/11/03 18:06:44 by asalvemi         ###   ########.fr       */
+/*   Updated: 2022/11/04 11:54:59 by gbarbant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char 	*ft_clean_line(char *save, char **line, int ret)
+char	*ft_clean_line(char *save, char **line, int ret)
 {
 	unsigned int	i;
-	char 			*tmp;
+	char			*tmp;
 
 	i = 0;
-	while(save[i])
+	while (save[i])
 	{
 		if (save[i] == '\n')
 			break ;
@@ -42,7 +42,7 @@ char 	*ft_clean_line(char *save, char **line, int ret)
 
 char	*ft_save(char *buffer, char *save)
 {
-	char 	*tmp;
+	char	*tmp;
 
 	if (save)
 	{
@@ -56,19 +56,22 @@ char	*ft_save(char *buffer, char *save)
 	return (save);
 }
 
-int		get_next_line(int fd, char **line) {
-	static char *save[4096];
-	char buffer[BUFFER_SIZE + 1];
-	int ret;
+int	get_next_line(int fd, char **line)
+{
+	static char	*save[4096];
+	char		buffer[BUFFER_SIZE + 1];
+	int			ret;
 
-	while ((ret = read(fd, buffer, BUFFER_SIZE)))
+	ret = read(fd, buffer, BUFFER_SIZE);
+	while (ret)
 	{
 		if (ret == -1)
 			return (-1);
 		buffer[ret] = '\0';
 		save[fd] = ft_save(buffer, save[fd]);
 		if (ft_strchr(buffer, '\n'))
-			break;
+			break ;
+		ret = read(fd, buffer, BUFFER_SIZE);
 	}
 	if (ret <= 0 && !save[fd])
 	{

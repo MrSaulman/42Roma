@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asalvemi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gbarbant <gbarbant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/18 15:53:11 by asalvemi          #+#    #+#             */
-/*   Updated: 2021/01/18 15:53:12 by asalvemi         ###   ########.fr       */
+/*   Updated: 2022/11/04 12:29:45 by gbarbant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ char	*ft_itoa(int n)
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	sign = (n < 0) ? -1 : 1;
-	len = (n < 0) ? ft_len_int(n) + 1 : ft_len_int(n);
-	if (!(str = malloc(sizeof(char) * (len + 1))))
+	sign = ft_sign(n);
+	len = ft_len(n);
+	str = malloc(sizeof(char) * (len + 1));
+	if (!str)
 		return (NULL);
 	str[len] = '\0';
 	n *= sign;
@@ -36,9 +37,9 @@ char	*ft_itoa(int n)
 	return (str);
 }
 
-int		ft_len_int(int n)
+int	ft_len_int(int n)
 {
-	int		len;
+	int	len;
 
 	len = 0;
 	if (n == 0)
@@ -48,5 +49,27 @@ int		ft_len_int(int n)
 		n = n / 10;
 		len++;
 	}
+	return (len);
+}
+
+int	ft_sign(int n)
+{
+	int	sign;
+
+	if (n < 0)
+		sign = -1;
+	else
+		sign = 1;
+	return (sign);
+}
+
+int	ft_len(int n)
+{
+	int	len;
+
+	if (n < 0)
+		len = ft_len_int(n) + 1;
+	else
+		len = ft_len_int(n);
 	return (len);
 }
