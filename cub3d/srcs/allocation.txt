@@ -1,2 +1,5 @@
 t_game *game nel main.c
-char *line in parse_map/parser.c 
+
+char *line in parse_map/parser.c
+
+4 x char *game->paths.* in save_paths.c

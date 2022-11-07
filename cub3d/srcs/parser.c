@@ -6,7 +6,7 @@
 /*   By: gbarbant <gbarbant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 15:16:00 by gbarbant          #+#    #+#             */
-/*   Updated: 2022/11/07 14:21:38 by gbarbant         ###   ########.fr       */
+/*   Updated: 2022/11/07 15:40:20 by gbarbant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	parse_map(t_game *game, char *path)
 		if (for_each_line(line, game, fd))
 		{
 			free(line);
-			my_exit(1, "not a valid map!", game);
+			my_exit(1, "Something happened in the map parsing :(", game);
 		}
 	}
 	free(line);
@@ -72,22 +72,22 @@ int	for_each_line(char *line, t_game *game, int fd)
 	while (line[i] == ' ')
 		i++;
 	if (line[i] == 'N' && line[i + 1] == 'O')
-		parse_no(line, game);
+		i = parse_no(line, game);
 	else if (line[i] == 'S' && line[i + 1] == 'O')
-		parse_so(line, game);
+		i = parse_so(line, game);
 	else if (line[i] == 'W' && line[i + 1] == 'E')
-		parse_we(line, game);
+		i = parse_we(line, game);
 	else if (line[i] == 'E' && line[i + 1] == 'A')
-		parse_ea(line, game);
+		i = parse_ea(line, game);
 	else if (line[i] == 'F')
-		parse_floor(line, game);
+		i = parse_floor(line, game);
 	else if (line[i] == 'C')
-		parse_ceiling(line, game);
+		i = parse_ceiling(line, game);
 	else if (line[i] == '1')
-		start_map_parse(line, game, fd);
-	else if (line[i] == '\0')
+		i = start_map_parse(line, game, fd);
+	else if (line[i] == '\0' || line[i] == '\n')
 		return (0);
 	else
 		return (1);
-	return (0);
+	return (i);
 }
