@@ -6,7 +6,7 @@
 /*   By: gbarbant <gbarbant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 15:16:00 by gbarbant          #+#    #+#             */
-/*   Updated: 2022/11/07 15:40:20 by gbarbant         ###   ########.fr       */
+/*   Updated: 2022/11/12 14:35:48 by gbarbant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	parse_map(t_game *game, char *path)
 		my_exit(1, "allocation failed", game);
 	while (gnl == 1)
 	{
+		clean_line(&line);
 		gnl = get_next_line(fd, &line);
 		if (for_each_line(line, game, fd))
 		{
@@ -90,4 +91,11 @@ int	for_each_line(char *line, t_game *game, int fd)
 	else
 		return (1);
 	return (i);
+}
+
+void	clean_line(char *line)
+{
+	int i = 0;
+	while (line[i] != '\n' || line[i] != '\0')
+		line[i++] = '\0';
 }

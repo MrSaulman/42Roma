@@ -6,7 +6,7 @@
 /*   By: gbarbant <gbarbant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:21:06 by gbarbant          #+#    #+#             */
-/*   Updated: 2022/11/07 15:36:00 by gbarbant         ###   ########.fr       */
+/*   Updated: 2022/11/12 14:10:31 by gbarbant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int	parse_no(char *line, t_game *game)
 	while (j < len)
 		game->paths.no_path[j++] = line[i++];
 	game->paths.no_path[j] = '\0';
+	if (check_finished_line(line, i))
+		return (1);
 	return (0);
 }
 
@@ -51,6 +53,8 @@ int	parse_so(char *line, t_game *game)
 	while (j < len)
 		game->paths.so_path[j++] = line[i++];
 	game->paths.so_path[j] = '\0';
+	if (check_finished_line(line, i))
+		return (1);
 	return (0);
 }
 
@@ -72,6 +76,8 @@ int	parse_we(char *line, t_game *game)
 	while (j < len)
 		game->paths.we_path[j++] = line[i++];
 	game->paths.we_path[j] = '\0';
+	if (check_finished_line(line, i))
+		return (1);
 	return (0);
 }
 
@@ -94,4 +100,6 @@ int	parse_ea(char *line, t_game *game)
 		game->paths.ea_path[j++] = line[i++];
 	game->paths.ea_path[j] = '\0';
 	return (0);
+	if (check_finished_line(line, i))
+		return (1);
 }

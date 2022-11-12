@@ -6,7 +6,7 @@
 /*   By: gbarbant <gbarbant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 16:18:28 by gbarbant          #+#    #+#             */
-/*   Updated: 2022/11/07 15:29:56 by gbarbant         ###   ########.fr       */
+/*   Updated: 2022/11/12 14:36:10 by gbarbant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ int				parse_we(char *line, t_game *game);
 int				parse_ea(char *line, t_game *game);
 int				parse_floor(char *line, t_game *game);
 int				parse_ceiling(char *line, t_game *game);
-
+int				check_finished_line(char *line, int i);
+int				copy_nbr(int *dest, char *line, int i);
+void			clean_line(char *line);
 
 #endif
