@@ -1,7 +1,0 @@
-t_game *game in main.c
-
-char *line in parse_map/parser.c
-
-4 x char *game->paths.* in parse_path.c
-
-char *ptr in copy_nbr/parse_fc.c
